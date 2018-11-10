@@ -1,0 +1,6 @@
+<p *ngIf="reserva">
+  {{reserva.reservaId}}
+  {{reserva.dataInicio | date: 'dd/MM/yyyy'}}
+  {{reserva.dataFim | date: 'dd/MM/yyyy'}}
+  {{reserva.valor | currency: 'BRL'}}
+</p>

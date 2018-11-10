@@ -1,11 +1,14 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReservaComponent } from './reserva.component';
+import { ReservaDetalhesComponent } from './reserva-detalhes/reserva-detalhes.component';
+import { ReservaListaComponent } from './reserva-lista/reserva-lista.component';
 
 @NgModule({
-  declarations: [ReservaComponent],
+  declarations: [ReservaDetalhesComponent, ReservaListaComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ]
 })
 export class ReservaModule { }

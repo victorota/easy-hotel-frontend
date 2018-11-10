@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Minhas Reservas</h1>
+  <table class="table table-striped table-condensed table-sm">
+    <thead>
+      <tr>
+        <th>Nº Reserva</th>
+        <th>Data Check-IN</th>
+        <th>Data Check-OUT</th>
+        <th>Valor</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reserva of reservas">
+        <td>{{reserva.reservaId}}</td>
+        <td>{{reserva.dataInicio | date: 'dd/MM/yyyy'}}</td>
+        <td>{{reserva.dataFim | date: 'dd/MM/yyyy'}}</td>
+        <td>{{reserva.valor | currency: 'BRL'}}</td>
+        <td><a [routerLink]="['/reserva',reserva.reservaId]" class="btn btn-outline-primary btn-sm">Detalhes</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

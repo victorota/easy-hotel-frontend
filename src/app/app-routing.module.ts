@@ -1,10 +1,11 @@
+import { ReservaDetalhesComponent } from './reserva/reserva-detalhes/reserva-detalhes.component';
+import { ReservaListaComponent } from './reserva/reserva-lista/reserva-lista.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { HotelComponent } from './hotel/hotel.component';
-import { ReservaComponent } from './reserva/reserva.component';
 
 const routes: Routes = [
   {
@@ -13,7 +14,12 @@ const routes: Routes = [
       { path: 'home', component: HomeComponent },
       { path: 'hotel', component: HotelComponent },
       { path: 'cadastro', component: CadastroComponent },
-      { path: 'reserva', component: ReservaComponent },
+      {
+        path: 'reserva', children: [
+          { path: '', component: ReservaListaComponent },
+          { path: ':id', component: ReservaDetalhesComponent }
+        ]
+      },
       { path: 'login', component: LoginComponent },
       { path: '', redirectTo: '/home', pathMatch: 'full' },
     ]
