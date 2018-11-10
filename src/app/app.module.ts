@@ -15,6 +15,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { AgmCoreModule } from '@agm/core';
+import { NgxUiLoaderModule, NgxUiLoaderRouterModule, NgxUiLoaderHttpModule } from 'ngx-ui-loader';
+
 
 @NgModule({
   declarations: [
@@ -32,6 +34,9 @@ import { AgmCoreModule } from '@agm/core';
     HotelModule,
     CadastroModule,
     LoginModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule,
+    NgxUiLoaderRouterModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM'
     })

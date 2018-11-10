@@ -25,6 +25,7 @@
     "core-js": "^2.5.4",
     "ngx-bootstrap": "^3.1.1",
     "ngx-mask": "^6.5.18",
+    "ngx-ui-loader": "^7.0.0",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.26"
   },
