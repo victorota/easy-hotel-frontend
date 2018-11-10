@@ -10,6 +10,11 @@ import { ReservaModule } from './reserva/reserva.module';
 import { HotelModule } from './hotel/hotel.module';
 import { CadastroModule } from './cadastro/cadastro.module';
 import { LoginModule } from './login/login.module';
+import { MyHttpInterceptor } from './http.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -19,14 +24,25 @@ import { LoginModule } from './login/login.module';
     BrowserModule,
     AppRoutingModule,
     NavBarModule,
+    HttpModule,
+    HttpClientModule,
     HomeModule,
     FooterModule,
     ReservaModule,
     HotelModule,
     CadastroModule,
-    LoginModule
+    LoginModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM'
+    })
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: MyHttpInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

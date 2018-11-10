@@ -1,3 +1,5 @@
+import { SessionService } from './../services/session.service';
+import { LoginService } from './../services/login.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 
@@ -8,14 +10,21 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   public loginForm;
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private loginService: LoginService, private session: SessionService) {
     this.loginForm = this.formBuilder.group({
-      login: ['', [Validators.required]],
+      nome: ['', [Validators.required]],
       senha: ['', [Validators.required]]
     });
   }
 
   ngOnInit() {
+    this.loginService.getListUser().subscribe(data => console.log(data));
+  }
+
+  public logar() {
+    this.loginService.auth(this.loginForm.value).subscribe(data => {
+      this.session.setItem('easy-hotel-auth', data);
+    });
   }
 
 }
