@@ -15,6 +15,7 @@ const routes: Routes = [
       { path: 'cadastro', component: CadastroComponent },
       { path: 'reserva', component: ReservaComponent },
       { path: 'login', component: LoginComponent },
+      { path: '', redirectTo: '/home', pathMatch: 'full' },
     ]
   }
 ];

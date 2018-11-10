@@ -1,0 +1,18 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-thumb-list',
+  templateUrl: './thumb-list.component.html',
+  styleUrls: ['./thumb-list.component.css']
+})
+export class ThumbListComponent implements OnInit {
+  public readonly max = 5;
+  public readonly isReadonly = true;
+  public rate = 4;
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
