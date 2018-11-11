@@ -1,3 +1,4 @@
+import { QuartoComponent } from './quarto/quarto.component';
 import { ReservaDetalhesComponent } from './reserva/reserva-detalhes/reserva-detalhes.component';
 import { ReservaListaComponent } from './reserva/reserva-lista/reserva-lista.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
           { path: ':id', component: ReservaDetalhesComponent }
         ]
       },
+      { path: 'quarto/:id', component: QuartoComponent },
       { path: 'login', component: LoginComponent },
       { path: '', redirectTo: '/home', pathMatch: 'full' },
     ]

@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { AgmCoreModule } from '@agm/core';
 import { NgxUiLoaderModule, NgxUiLoaderRouterModule, NgxUiLoaderHttpModule } from 'ngx-ui-loader';
+import { QuartoModule } from './quarto/quarto.module';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { NgxUiLoaderModule, NgxUiLoaderRouterModule, NgxUiLoaderHttpModule } fro
     FooterModule,
     ReservaModule,
     HotelModule,
+    QuartoModule,
     CadastroModule,
     LoginModule,
     NgxUiLoaderModule,

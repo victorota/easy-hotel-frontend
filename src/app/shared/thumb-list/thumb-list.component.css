@@ -2,3 +2,11 @@
     padding: 0px;
     cursor: pointer;
 }
+.col-md-3{
+    padding: 10px !important;
+}
+
+.card-img-overlay{
+    color: #82afeb;
+    /* background-color: #82afeb; */
+}
